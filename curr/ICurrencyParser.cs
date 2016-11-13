@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curr
 {
-    interface ICurrencyParser
+    public interface ICurrencyParser
     {
         List<Currency> parse(String data);
     }

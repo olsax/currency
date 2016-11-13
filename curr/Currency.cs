@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curr
 {
-    class Currency
+    public class Currency
     {
         private string name;
         private int predictor;

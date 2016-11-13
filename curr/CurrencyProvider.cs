@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace curr
 {
-    class CurrencyProvider:ICurrencyProvider
+    public class CurrencyProvider:ICurrencyProvider
     {
         public string DowloadData()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curr
 {
-    interface ICurrencyProvider
+    public interface ICurrencyProvider
     {
         string DowloadData();
     }

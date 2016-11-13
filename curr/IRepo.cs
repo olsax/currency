@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace curr
 {
-    interface IRepo
+    public interface IRepo
     {
+        void fetchData(List<Currency> list);
+        Currency findByCode(String currencyCode);
     }
 }

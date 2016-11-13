@@ -18,7 +18,7 @@ namespace curr
         {
             ICurrencyProvider provider = new CurrencyProvider();
             ICurrencyParser parser = new NBPCurrencyParser();
-            IRepo repo;
+            IRepo repo = Repo.getInstance();
 
             List<Currency> list = parser.parse(provider.DowloadData());
 

@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace curr
 {
-    class NBPCurrencyParser : ICurrencyParser
+    public class NBPCurrencyParser : ICurrencyParser
     {
         public List<Currency> parse(string data)
         {
