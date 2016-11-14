@@ -16,13 +16,21 @@ namespace curr
 
         static void Init()
         {
+            // Tworzymy obiekty reprezentujące poszczególne warstwy
             ICurrencyProvider provider = new CurrencyProvider();
             ICurrencyParser parser = new NBPCurrencyParser();
             IRepo repo = Repo.getInstance();
+            ICurrencyConverter converter = new CurrencyConverter();
 
-            List<Currency> list = parser.parse(provider.DowloadData());
+            //dokonujemy inicjacji - pobieramy dane, parsujemy, zapisujemy
+            String downloadedData = provider.DowloadData();
+            List<Currency> currencyList = parser.parse(downloadedData);
+            repo.fetchData(currencyList);
 
-            repo.fetchData(list);
+            //przyklad uzycia logiki
+            double wynik = converter.convertFromPLN(5, "EUR");
+            Console.WriteLine("5zł to " + wynik + " euro");
+            Console.ReadKey();
         }
     }
 }
