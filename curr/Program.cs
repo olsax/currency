@@ -10,7 +10,6 @@ namespace curr
     {
         static void Main(string[] args)
        {
-        
             Init();
         }
 
@@ -21,16 +20,17 @@ namespace curr
             ICurrencyParser parser = new NBPCurrencyParser();
             IRepo repo = Repo.getInstance();
             ICurrencyConverter converter = new CurrencyConverter();
-
+            ICurrencyView view = new CurrencyView();
             //dokonujemy inicjacji - pobieramy dane, parsujemy, zapisujemy
             String downloadedData = provider.DowloadData();
             List<Currency> currencyList = parser.parse(downloadedData);
             repo.fetchData(currencyList);
 
             //przyklad uzycia logiki
-            double wynik = converter.convertFromPLN(5, "EUR");
-            Console.WriteLine("5zł to " + wynik + " euro");
-            Console.ReadKey();
+            //double wynik = converter.convertFromPLN(5, "EUR");
+            //Console.WriteLine("5zł to " + wynik + " euro");
+            //Console.ReadKey();
+            view.display();
         }
     }
 }
